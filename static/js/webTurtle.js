@@ -158,15 +158,15 @@ class webTurtle {
 				break;
 
 			case '_':
-this.underscore(modules[i].paramList[0]);
+				this.underscore(modules[i].paramList[0]);
 				break;
 
 			case '!':
-this.underscore(modules[i].paramList[0]);
+				this.underscore(modules[i].paramList[0]);
 				break;
 
 			case 'SetWidth':
-this.underscore(modules[i].paramList[0]);
+				this.underscore(modules[i].paramList[0]);
 				break;
 
 			case ';':
@@ -564,7 +564,7 @@ this.underscore(modules[i].paramList[0]);
      *
      * @param {Number} angle The turning angle
      */
-    left(angle) {
+    left(angle = 60) {
         var ra = angle * GEOM_RAD;
         var matrix = new BABYLON.Matrix.RotationAxis(this.currentParams.up, ra);
         this.currentParams.heading = new BABYLON.Vector3.TransformCoordinates(this.currentParams.heading, matrix);
@@ -578,7 +578,7 @@ this.underscore(modules[i].paramList[0]);
      *
      * @param {Number} angle The turning angle
      */
-    right(angle) {
+    right(angle = 60) {
         this.left(-angle);
     }
     
@@ -589,7 +589,7 @@ this.underscore(modules[i].paramList[0]);
      *
      * @param {Number} angle The turning angle
      */
-    down(angle) {
+    down(angle = 60) {
         var ra = angle * GEOM_RAD;
         var matrix = new BABYLON.Matrix.RotationAxis(this.currentParams.left, ra);
         this.currentParams.heading = new BABYLON.Vector3.TransformCoordinates(this.currentParams.heading, matrix);
@@ -603,7 +603,7 @@ this.underscore(modules[i].paramList[0]);
      *
      * @param {Number} angle The turning angle
      */
-    up(angle) {
+    up(angle = 60) {
         this.down(-angle);
     }
     
@@ -614,7 +614,7 @@ this.underscore(modules[i].paramList[0]);
 
      * @param {Number} angle The turning angle
      */
-    rollL(angle) {
+    rollL(angle = 60) {
         var ra = angle * GEOM_RAD;
         var matrix = new BABYLON.Matrix.RotationAxis(this.currentParams.heading, ra);
         this.currentParams.up = new BABYLON.Vector3.TransformCoordinates(this.currentParams.up, matrix);
@@ -628,7 +628,7 @@ this.underscore(modules[i].paramList[0]);
 
      * @param {Number} angle The turning angle
      */
-    rollR(angle) {
+    rollR(angle = 60) {
         this.rollL(-angle);
     }
 
@@ -639,7 +639,7 @@ this.underscore(modules[i].paramList[0]);
      *
      * @param {Number} angle The turning angle
      */
-    iRollL(angle) {
+    iRollL(angle = 60) {
         //TODO
 
         this.rollL(angle);

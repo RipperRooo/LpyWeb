@@ -20,10 +20,10 @@ def interpret(name=None):
 		l = lpy.Lsystem()
 		code = request.form['code']
 		code = code.encode('ascii', 'ignore')
-		try:
-			l.set(code)
-		except:
-			return render_template('result.html', name='Syntax error')
+		#try:
+		l.set(code)
+		#except:
+			#return render_template('result.html', name='Syntax error')
 		lstring = l.derive()
 		ilstring = l.interpret(lstring)
 		txtlstring = str(ilstring)

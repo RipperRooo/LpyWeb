@@ -2,6 +2,10 @@
  * @file main.js
  * @author Renan Berruex <renan.berruex@epitech.eu>
  * @version 0.1
+cd C:\Users\Renan\Documents\Stage INRIA\lpyWEB
+actiate lpy
+set FLASK_APP=communication.py
+flask run
  */
 
 function Init()
